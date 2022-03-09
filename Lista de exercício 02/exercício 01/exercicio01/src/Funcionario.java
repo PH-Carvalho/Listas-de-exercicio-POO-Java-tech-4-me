@@ -15,31 +15,32 @@ public class Funcionario {
     Scanner teclado = new Scanner (System.in);
 
     
- /*public Funcionario(String nome,int matricula,Float salario) {
+ public Funcionario(String nome,int matricula,Float salario) {
     this.nome = nome;
     this.matricula = matricula;
-    this.salario = salario;}*/
+    this.salario = salario;
+}
 
-    void setNome(String nome){
-        this.nome=nome;
+    public void setNome(String Nome){
+        this.nome=Nome;
     }
-    String getNome(){
+   public  String getNome(){
 
         return nome;
     }
 
-    void setMatricula(int matricula){
-        this.matricula = matricula;
+   public void setMatricula(int Matricula){
+        this.matricula = Matricula;
     }
-    int getMatricula(){
+   public int getMatricula(){
 
         return matricula;
     }
     
-    void setSalario(Float salario){
-        this.salario=salario;
+    public void setSalario(Float Salario){
+        this.salario=Salario;
     }
-    Float getSalario(){
+    public Float getSalario(){
 
         return salario;
     }
