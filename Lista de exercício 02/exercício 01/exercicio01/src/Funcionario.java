@@ -21,6 +21,10 @@ public class Funcionario {
     this.salario = salario;
 }
 
+public Funcionario(){
+    
+}
+
     public void setNome(String Nome){
         this.nome=Nome;
     }
