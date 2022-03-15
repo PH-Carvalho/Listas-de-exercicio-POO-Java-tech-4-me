@@ -45,7 +45,7 @@ public class Contato{
     
         System.out.print("Digite o nome do contato.: \n");
             String setNome = teclado.next();
-    
+
         System.out.print("Digite o sobre nome do contato.: \n");
             String set_sobreNome=teclado.next();
     
@@ -57,4 +57,11 @@ public class Contato{
             this.numeroTelefone=set_numeroTelefone;
        }
 
-}
+       public void status(){
+           System.out.print("NOME.:" + this.nome + this.sobreNome);
+           System.out.print("TELEFONE.: "+ this.numeroTelefone+"\n"); 
+           System.out.println("-------------------------------------------");
+
+       }
+       }
+
