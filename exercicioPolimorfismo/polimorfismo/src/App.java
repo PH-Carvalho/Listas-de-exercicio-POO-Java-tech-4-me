@@ -13,7 +13,7 @@ public static void main(String[] args) throws Exception {
     float saldo=teclado.nextFloat();
 
     System.out.println("Você deseja utilizar o cartão de credito ou o de debito?");
-    System.out.println("1==> Credito\n2==>Débito");
+    System.out.println("1==> Credito\n 2==>Débito");
     System.out.print("Opção.:");
     int opcao=teclado.nextInt();
 
