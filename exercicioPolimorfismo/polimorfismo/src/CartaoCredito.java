@@ -32,11 +32,7 @@ public class CartaoCredito extends Cartao {
     }
 
     @Override
-    public void pagamento(){
-
-        System.out.println("Qual é o valor que você deseja pagar?");
-
-        setTotalPagar(teclado.nextFloat());
+    public float pagamento (float totalPagar){
 
         if(limiteCredito>totalPagar){
              setLimiteCredito(this.limiteCredito-=totalPagar);
@@ -45,12 +41,18 @@ public class CartaoCredito extends Cartao {
              System.out.println("Por quantas vezes você deseja parcelar sua compra?");
              setParcela(teclado.nextInt());
 
-             super.totalPagar/=this.getParcelas();
+             totalPagar/=this.getParcelas();
             
             for (int i = 1; i <= parcelas; i++) {
-                System.out.println(i+"° mês" + super.saldo);
+                System.out.println(i+"° mês.: " + getSaldo() + "R$");
+                System.out.println("Limite Caratão.: "+ getLimiteCredito() + "R$");
+                System.out.println("-----------------------------------------------------------------");
                 setSaldo(super.saldo-=totalPagar);
+                setLimiteCredito(limiteCredito+=totalPagar);
             }
-        }else{System.out.println("Limite indisponível.");}
+        }
+        else{System.out.println("Limite indisponível.");
+        }
+        return saldo;
     }
 }
