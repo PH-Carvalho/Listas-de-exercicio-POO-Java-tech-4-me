@@ -1,14 +1,16 @@
+import java.time.LocalDate;
+import java.util.zip.DataFormatException;
+
 import execao.*;
 
 public class Pessoa  {
     private String nomeCompleto;
     private String cpf;
-    private int dataNascimento;
+    private LocalDate dataNascimento;
     private double salario;
     private boolean nomeComposto=false; 
- 
 
-    public Pessoa(String nomeCompleto, String cpf, int dataNascimento, double salario) throws nomeInvalidoException,cpfInvalidoException{
+    public Pessoa(String nomeCompleto, String cpf, LocalDate dataNascimento, double salario) throws nomeInvalidoException,cpfInvalidoException, DataFormatException{
         setNomeCompleto(nomeCompleto);
         setCpf(cpf);
         setDataNascimento(dataNascimento);
@@ -50,13 +52,12 @@ public class Pessoa  {
         this.cpf = cpf;
     }
 
-    public int getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(int dataNascimento) {
-        
-
+    public void setDataNascimento(LocalDate dataNascimento)  {
+         
         this.dataNascimento = dataNascimento;
     }
 
@@ -65,6 +66,8 @@ public class Pessoa  {
     }
 
     public void setSalario(double salario) {
+
+    
         this.salario = salario;
     }
 
@@ -117,7 +120,13 @@ public class Pessoa  {
 
         return 0;
     }
+    @Override
+    public String toString() {
+        return "CPF.: " + cpf +  "\nPrimeiro nome " + getNome() + "\nUltimo nome "+getSobrenome() +" \nDataNascimento.: " + dataNascimento + "\nNomeCompleto.: " + nomeCompleto
+                 + "\nSalario=" + salario ;
+    }
 
+    
 
 
     
