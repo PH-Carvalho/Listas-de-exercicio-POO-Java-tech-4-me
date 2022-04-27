@@ -125,9 +125,5 @@ public class Pessoa  {
         return "CPF.: " + cpf +  "\nPrimeiro nome " + getNome() + "\nUltimo nome "+getSobrenome() +" \nDataNascimento.: " + dataNascimento + "\nNomeCompleto.: " + nomeCompleto
                  + "\nSalario=" + salario ;
     }
-
-    
-
-
-    
+   
 }

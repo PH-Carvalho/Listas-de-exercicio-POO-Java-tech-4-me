@@ -10,6 +10,9 @@ import java.util.zip.DataFormatException;
 public class App {
     public static void main(String[] args) throws Exception {
     List<Pessoa> listaDeColaboradores = new ArrayList<>();
+
+    List<File> arquivosCadastrados = new ArrayList<>();
+
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
 
     Scanner teclado = new Scanner(System.in);
@@ -57,15 +60,33 @@ public class App {
                       
                       }
                       else{
-                          FileWriter arquivoDosCadastros =new FileWriter("CadastroDeColaboradores");
 
-                          
+                         System.out.println("Digite o nome do arquivo.: ");
 
-                          arquivoDosCadastros.write(listaDeColaboradores.toString());
-                      
-                          arquivoDosCadastros.close();
-                      
-                          System.out.println("Arquivo criado!");
+                         String nomeArquivo = teclado.nextLine();
+                         
+                         File arquivo = new File("C:\\Users\\pedro\\Desktop\\estudos tech 4 me\\Listas de exercicio POO Java\\ExercicioTratamentoDeEcessoes\\AtividadeTratamentoDeEcessoes\\src\\pastaDosArquivos\\"+nomeArquivo+".txt");
+                        if(arquivo.createNewFile()){
+                         FileWriter arquivoEscrita = new FileWriter(arquivo);
+
+                         arquivoEscrita.write(listaDeColaboradores.toString());
+
+                         arquivoEscrita.close();
+
+                         System.out.println("Arquivo criado!");
+
+                         arquivosCadastrados.add(arquivo);
+                         
+                        }else{
+                            System.out.println("o arquivo escrito já existe na sua pasta de arquivos.");
+                        }
+
+                      arquivosCadastrados.stream().
+                      forEach(p->p.getName());
+
+                         
+
+                    
                         }
                     break;
 
